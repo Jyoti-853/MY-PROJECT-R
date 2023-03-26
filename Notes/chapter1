@@ -1,0 +1,11 @@
+Emmet:- 
+It is a plugin  or  we can say short expression to generate HTML markup.
+Eg. html:5 it will give code snippet of common HTML
+
+LIbrary & Framework:
+ When you use a library, you are in charge of the flow of the application. When you use a framework, the framework is in charge of the flow.
+
+ CDN why we use it?
+ A CDN improves efficiency by introducing intermediary servers between the client and the website server.
+ It distributes content from an “origin” server throughout the world by caching content close to where each end user is accessing the internet via a web-enabled device. It decrease web traffic to the web server, reduce bandwidth consumption.
+

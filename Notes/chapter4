@@ -1,0 +1,23 @@
+Config driven UI- When we want to render two different UI at some place as per some value and dynamically  add some fields.
+Instead of adding all those dynamic fields we should create a object as schema with all fields name as key.
+
+
+Why we should not use  index as key :
+We should use key so that we can avoid rerender of unnecesaary items when we have same items like  list four times.
+But we should not use key Beacuse if  any state value is change and if we add a elemenemt in top then it will add that element in top  and the prev items id will also get change so it will re render all items.
+Eg:
+Before
+ <ul>
+  <li key=1>Milk</li>
+  <li key=2>Eggs</li>
+  <li key=3>Bread</li>
+  <li key=4>Butter</li>
+</ul>
+After 
+<ul>
+  <li key="1">Cream </li>
+  <li key="2">Milk</li>
+  <li key="3">Eggs</li>
+  <li key="4">Bread</li>
+  <li key="5">Butter</li>
+</ul>

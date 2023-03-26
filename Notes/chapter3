@@ -1,0 +1,30 @@
+git init: for doing any git cmd like push pull , we need to initialize it. It make your code compatible with git.
+
+babelrc- configuration file for babel
+
+FunctionalComponent:  A function which returns React element. It is good to start it with capital letter.
+In function component it is not mandatory to write return we can skip return and just render React element.
+
+JSX- It is HTML like  syntax used in React. In JSX we can write any js code in curly braces{......}
+It can  have only one parent.
+
+React element example:
+const  heading= <h1>Hello </h1>
+to render react element Eg. root.render(heading)
+to render it inside  a component use {heading}
+
+React component example: (different is of function, react component is function but element is object)
+const MyComp= ()=>{
+    return(<h1> Helooo World</h1>)
+}
+to render react component. Eg. root.render(<MyComp/>) ---(in angular bracket)
+to render it inside a component use like <MyComp/>
+
+
+Error: Functions are not valid as react child error means we are having a function but rendering it as React element it should render as component means in  a ngular bracket or use parenthesis to use it.
+
+Component Composition: If we are using component inside component is called composing component.
+
+BrowserList: In package.json if we add this with "browserList":["last 2 chrome versions"] --It means  it will definitely  be available on last two chrome version.
+
+Babel: It is transpiler which  convert Jsx code into react element.

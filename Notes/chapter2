@@ -1,0 +1,37 @@
+npx- It is executing a package with using npm, without downloading it.It is like  equal to  npm run 
+npx = npm run
+
+npm  init --- It create package.json
+
+npm install -D parcel -- Parcel is bundler like webpack ,it will install parcel in dev dependencie means only required for this project.It will create package.lock.json
+
+In package.json some version we will see start with ^ titl(It means it will automatically update this package with minor version) eg. "react": "^17.0.0" If react 17.0.1 version will come it will automatically update that.
+This package.lock.json this will exactly tell u what version do you have in your system. It  take a screenshot of package.json so that we will know which version we have installed.(because if we u se ^ symbol it will upgrade it and we will not know exact version which we had earlier.)
+
+We should never add package.lock.json in gitignore and  never change it. (if we will do this then we have issue like it is working in local but not in production may be this is because of different version in production server)
+
+
+babel-plugin-transform-remove-console - to remove console log from project we need this package and configure it.
+
+Parcel : It is a bundler who do lots of job like:
+caching, HMR(hot module replacement), minification, image optimization.remove unwanted code.
+
+Build cmd:
+npx parcel build index.html ( to craete production build it will create dist folder)
+npx  parcel index.html ( to craete build locally  or to execute parcel it will create parcel.cache folder)--to create a script for it package.json 
+"Scripts":{
+    "start": "parcel index.html"
+}
+After writing this script now we  can just  do  npm run start instead of npx parcel index.html
+
+
+ReactDOM- It is used for manipulating DOM.
+
+Different types of type in script tag:
+text/javascript (this is default)
+text/ecmascript
+application/ecmascript
+application/javascript
+
+
+When we install   any package like  parcel it will create node-modules folder node-modules will craete because it will install  all other dependencies which it need.
