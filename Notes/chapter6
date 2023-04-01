@@ -1,0 +1,10 @@
+useEffect has  callback function  which will not call immediately it will call when useEffect want.
+After every re render  of component  it will call callback function of useEffect hook.
+(It will re render component when any state change or ayn props changes.)
+
+If we add second parameter dependency aaray as blank then it will not  call call back function on every re render of component. It will call that callback function just one time after initial render.
+
+If we have  callback function in useEffect hook and any  code in  after  useEffect  hook, then it will call first that code then useEffect callback function, because it is callback it will not call immediately.
+
+If we don't have second parameter in use Effect hook, then it will call useEffect in each re render
+Shimmer UI:  When we reload the page it take sometime to load the api till that time earlier we show loader but now we are using shimmer UI means it will show blocks and cards only image and details will show after api call successfull.

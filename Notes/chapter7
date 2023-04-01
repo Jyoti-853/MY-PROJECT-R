@@ -1,0 +1,20 @@
+Routing:-----
+
+react-router-dom: package for routing
+createBrowserRouter: this function is used to create config for our router or we can say create a router(list of all path)
+
+RouterProvider-- Then we have to provide that route to our component.
+
+useRouteError: A hook in react-router-dom lib used to handle error, it will give error code,  status code and  many more description of error which we can show in UI
+
+
+Anchor tag which act as link   will refresh the page if we use it.
+
+Two types of routing: Client side, server side routing.
+
+
+Link- component used from react-routeer- dom  for creating a link , It has two props to and from  props.
+
+Outlet :  for creating  nested route ,it is like placeholder it is a component where  we place all our content which will change when we click on any link. It will be filled by children configuration which is in createBroserRouter method. liked middle portion of page we want to change on some routesa . whatever in children we have it will go in outlet.
+
+useParams: By using this hook we can read query string from url in rotes

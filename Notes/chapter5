@@ -1,0 +1,13 @@
+why  state variable is needed in React?
+Every componenmt in React maintains state, everytime when we need to create local variable we need state variable ,  that we can put it in component.
+For this we use useState hook to create state variable.
+
+React is one way data binding.
+useatste state hook returns a array which has variable name and setfunction name.
+
+If we need any variable in sync with UI then we need state variable. -----imp reason for useState
+We can use normal variable if we don't want to see the change in UI.
+
+Whenever any state varisable is change it re render that component.
+
+React is fast because of fast Dom manipulation.
