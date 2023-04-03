@@ -1,0 +1,40 @@
+In  React class based component,  render method is mandatory, this render method return JSX like in functional component.
+
+We should not mutate state directly because  react create sync of state variable to UI so by setState method it will get to know changes.
+
+First constructor is called then render , when class component is rendered.
+
+If we call any api or set State mehod in UseEffect then it will render component to times, first render with  default state value then update the state and then re render the component .
+**first render then update**
+
+componentDidMount() is equal to  calling useEffect with empty array.[] . It is called  once only after first render. It is equal to no second parameter in useEfefct.
+ // right place to call the api because it is called after render method, because react workflow is like first we render whatever we have in default state then will update it.
+
+ componentDidUpdate() is equal to calling useEffect hook with no second parameter.  It is called after every subsequent render means after  when state is changes or updating the DOM(first render + second+...).
+
+
+
+In class componemt  flow:
+1. Parent constructor
+2. Parent render (if in parent component we have some child component then it will  render the flow of that child component  like: 
+
+   a. child constructor
+   b. child rennder
+   c. child did component method)
+ 
+3. Parent DId compoent method
+
+Mount- load
+
+The super keyword is used to call the constructor of its parent class to access the parent's properties and methods.
+
+
+Lifecycle of react class based component:
+1. Mounting ---( first do all render phase then commit phase - in commit phase call compoentDidMount(---calling api ) )
+2. Updating.---(after commit { after calling api it  call setState that invoke re render } it re render the  component means update the  state of comp,  that comes in updating phase. )
+
+in lay man steps will be like this:
+
+constructor--> render-->componentDIdMount(* here we have api cal and setState method)-->
+setState()-->render(*because after setState it will again render the comp*)-->componentDidUpdate()--->
+componentWIllUnmount()

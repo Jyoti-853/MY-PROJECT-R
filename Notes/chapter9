@@ -1,0 +1,15 @@
+All  bbelow terms are same--
+Bundle chunking
+code splitting
+dynamic bundling
+lazy loading
+On demand loading
+Dynamic import  
+
+
+When we are loading componnet on demand or lazy loading reactg tries to suspend it.To handle this we need to use Suspense, wrap our componemt in suspense componemt.
+
+When shoud I create a hook--- When we need state  tto store and resuable logic in oyur application.
+
+
+Note: Never dynamically load your component inside a component

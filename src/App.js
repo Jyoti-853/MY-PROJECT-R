@@ -1,4 +1,4 @@
-import React from "react";
+import React,{lazy, Suspense} from "react";
 import ReactDOM from "react-dom/client";
 //Named export- when at the time of creating we are using export then at the time of import should have to use in curly braces
 import Header from './components/Header'
@@ -9,13 +9,15 @@ import Error from "./components/Error";
 import Contact from "./components/Contact";
 import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
 import RestaurantMenu from "./components/RestaurantMenu";
+import Profile from './components/Profile';
+import Shimmer from './components/shimmer';
 
 //By using  simple Javascript render something in root element.
 // const heading= document.createElement('h1')
 // heading.innerHTML= ' Heading1'
 // const root= document.getElementById('root')
 // root.appendChild(heading)
-
+const Instamart= lazy(()=>import('./components/Instamart'))
 //By using React render something in root element
 const heading1 = React.createElement("h1", { id: "mytitle" }, "Heading1");
 
@@ -75,7 +77,14 @@ const  appRouter=createBrowserRouter(
       {
         path:"/about",
         element: <About/>,
-        errorElement:<Error/>
+        errorElement:<Error/>,
+        // to create a nested route in Aout page like about/profile in that case craete  nested children like below and in path just 
+        // add component name as  relative path not /profile otherwise browser will take it as localhost:1234/profile.
+        // don't use like /about/profile or /profile here., / meanms from the root  means localhost:1234/
+        children: [{
+          path:'profile' , 
+          element:<Profile/>
+        }]
       },
       {
         path:"/contact",
@@ -85,6 +94,11 @@ const  appRouter=createBrowserRouter(
       {
         path:"/restaurant/:restaurantId",
         element: <RestaurantMenu/>,
+        errorElement:<Error/>
+      },
+      {
+        path:"/instamart",
+        element: <Suspense fallback={<Shimmer/>}><Instamart/></Suspense>,
         errorElement:<Error/>
       },
     ],
