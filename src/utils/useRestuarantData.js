@@ -5,7 +5,6 @@ export const useRestaurantData=()=>{
     const [restaurantData, setRestaurantData] = useState([]);
 useEffect(()=>{
     //Api call should lie here 
-      //console.log("useEffect called")
       getRestaurantData()
     }, [])
   
