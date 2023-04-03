@@ -1,0 +1,58 @@
+About -Parent, Profile- Child
+
+ Case1: In About useEffect  state is change of about comp, in Profile use Effect state is changed for Profile comp.
+
+ About before return
+ About after return
+ profile before return
+ profile after return
+ profile useEffect
+ About useEffect
+ About before return
+ About after return
+ profile before return
+ profile after return
+
+ 
+Case 2: In About useEffect no state is changed, in Profile use Effect state is changed for Profile comp.
+
+ **Here  last two line render is beacuse  only in child comp state is changed so it re render only child comp.  ***
+About before return
+About after return
+profile before return
+profile after return
+profile useEffect
+About useEffect
+profile before return
+profile after return
+
+ Case3: In About useEffect  state is change of about comp, in Profile use Effect no state is changed for Profile comp.
+Here in last two line is due to :
+
+ **this  last two line render is beacuse  if parent state change then  it rerender parent and its child also,  vice-versa is not possible. like in a case 2***
+
+About before return
+ About after return
+ profile before return
+ profile after return
+ profile useEffect
+ About useEffect
+ About before return
+ About after return
+ profile before return 
+ profile after return
+
+
+Case 4: If we are changing the state of parent from its child.(by passing a function as props from parent to child) and callimg that function from child to change the parent state.
+
+About before return
+ About after return
+ profile before return
+ profile after return
+ profile useEffect
+ About useEffect
+ About before return
+ About after return
+ profile before return
+ profile after return
+

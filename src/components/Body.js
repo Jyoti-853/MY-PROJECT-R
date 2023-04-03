@@ -12,8 +12,8 @@ const Body = () => {
   // const [restaurantData, setRestaurantData] = useState([]);
   const restaurantData= useRestaurantData()
   const [filteredRestaurants, setFilteredRestaurants] = useState([]);
-  console.log('data',restaurantData )
-  console.log('filteredData',filteredRestaurants )
+  // console.log('data',restaurantData )
+  // console.log('filteredData',filteredRestaurants )
 
 
 
@@ -64,7 +64,7 @@ return <h1>Offline please check  your internet connection.</h1>
    return restaurantData.length===0 ? <Shimmer/>: (
     <>
       <div className="search-container">
-        {console.log(' inside',restaurantData )}
+        {/* {console.log(' inside',restaurantData )} */}
         <input
           type="text"
           className="search-input"

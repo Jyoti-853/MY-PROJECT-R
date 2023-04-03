@@ -38,3 +38,12 @@ in lay man steps will be like this:
 constructor--> render-->componentDIdMount(* here we have api cal and setState method)-->
 setState()-->render(*because after setState it will again render the comp*)-->componentDidUpdate()--->
 componentWIllUnmount()
+
+
+Lifecycle in function component:
+1. frst render ui. of all(parent , child)
+2. call useEffect if it is with  empty array. --call api-- change state -- re render component again.
+  ( child useEffect --> parent useEffect-->if parent state chnge then re render parent then child also--> if only child state change then re render only child)
+
+
+
