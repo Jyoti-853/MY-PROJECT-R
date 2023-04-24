@@ -1,0 +1,14 @@
+Ways to pass data from parent to child : Props drilling.
+Cons of it: It will re render all component in hierarachy.
+
+
+Lifting the state up: to  take the control from children to parent.
+
+
+Ways to pass data from child to parent:
+1. Custom hook
+2. context API
+3. Redux
+
+
+Lifting the state up- concept is needed when we need to control something  to its sibling component  from other sibling.In that case we need to create sytate in its parent and parent will handle it.

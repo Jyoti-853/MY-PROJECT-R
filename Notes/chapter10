@@ -1,0 +1,19 @@
+Stylinggg-------
+1. CSs
+2. SCSS
+3. Inline style
+4. Styled component
+5. Libraries like material Ui, Base ui, ANt
+6. Bootstrap
+6. Tailwind CSS Framework
+     --CSS  in the same file
+     --reusablity
+     --less bundle size--
+     --flexible UI, can we customized
+     --It works with classname
+
+     --At the end it only use the classes which we used , so bundling is  less
+     conss---- It change the default BEHAVIOUR OF MANY CSS LIKE H1  STYLE WILL CHANGE.
+
+
+     postcss or postcssrc file is config file like babelrc file is for  telling bundler that while bundlinfg compile this tailwindcss to css.
