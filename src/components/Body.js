@@ -1,19 +1,23 @@
-import { useState, useEffect} from "react";
+import { useState, useEffect, useContext} from "react";
 import RestaurantCard from "./RestaurantCard";
 import Shimmer from "./shimmer"
 import {Link} from "react-router-dom"
 import { filterData } from "../utils/helper";
 import { useRestaurantData } from "../utils/useRestuarantData";
 import useOnline from "../utils/useOnline"
+import UserContext from "../utils/UserContext"
+
 const Body = () => {
   const [searchText, setSearchText] = useState("");
   const isOnline= useOnline()
   const restaurantData= useRestaurantData()
   const [filteredRestaurants, setFilteredRestaurants] = useState([]);
+  const {userList, setUserList}= useContext(UserContext)
  
 // empty dependencies array, then call  callback function after  first render.( means after executing  code out of useEffect hook i.e console.log('renderrr'))
 // if searchText is passed in second parameter then it will call once after initial render + everytime after re render(whenever searchText value change)
 // if we don't have second parameter then it will call that useEffect after each re render.
+
 
 useEffect(()=>{
   if (restaurantData && restaurantData.length >0){
@@ -21,7 +25,12 @@ useEffect(()=>{
   }
 }, [restaurantData])
 
-
+const onTextChange =(e)=>{
+  setUserList({
+name:e.target.value,
+email:'hello@test.com'
+  }) 
+}
  
  if(!isOnline){
 return <h1>Offline please check  your internet connection.</h1>
@@ -47,6 +56,9 @@ return <h1>Offline please check  your internet connection.</h1>
         >
           Search 
         </button>
+       
+        <input type='text' value={userList.name} onChange={(e)=> onTextChange(e)}/>
+        {userList.email}
       </div>
       
       <div className="restaurant-list">

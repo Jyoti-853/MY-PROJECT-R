@@ -12,3 +12,5 @@ Ways to pass data from child to parent:
 
 
 Lifting the state up- concept is needed when we need to control something  to its sibling component  from other sibling.In that case we need to create sytate in its parent and parent will handle it.
+
+to change the context  we need context.provider

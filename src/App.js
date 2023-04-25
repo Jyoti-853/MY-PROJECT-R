@@ -1,4 +1,4 @@
-import React,{lazy, Suspense} from "react";
+import React,{lazy, Suspense ,useState} from "react";
 import ReactDOM from "react-dom/client";
 //Named export- when at the time of creating we are using export then at the time of import should have to use in curly braces
 import Header from './components/Header'
@@ -11,6 +11,7 @@ import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
 import RestaurantMenu from "./components/RestaurantMenu";
 import Profile from './components/Profile';
 import Shimmer from './components/shimmer';
+import UserContext from "./utils/UserContext";
 
 //By using  simple Javascript render something in root element.
 // const heading= document.createElement('h1')
@@ -53,11 +54,16 @@ const heading3 = <h1> Welcome</h1>;
 
 
 const AppLayout = () => {
+  const [users, setUsers] =useState({name: 'Jenny', email: 'Demo@test.com'})
+ 
   return (
     <>
+     {/* Provider will override user value of UserContext */}
+    <UserContext.Provider value={{userList:users, setUserList:setUsers}}>
       <Header />
       <Outlet/>
       <Footer/>
+      </UserContext.Provider>
     </>
   );
 };
