@@ -59,11 +59,11 @@ const AppLayout = () => {
   return (
     <>
      {/* Provider will override user value of UserContext */}
-    {/* <UserContext.Provider value={{userList:users, setUserList:setUsers}}> */}
+    <UserContext.Provider value={{userList:users, setUserList:setUsers}}>
       <Header />
       <Outlet/>
       <Footer/>
-      {/* </UserContext.Provider> */}
+      </UserContext.Provider>
     </>
   );
 };

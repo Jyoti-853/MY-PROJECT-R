@@ -12,7 +12,7 @@ const Body = () => {
   const isOnline= useOnline()
   const restaurantData= useRestaurantData()
   const [filteredRestaurants, setFilteredRestaurants] = useState([]);
-  const {user}= useContext(UserContext)
+  const {userList, setUserList}= useContext(UserContext)
  
 // empty dependencies array, then call  callback function after  first render.( means after executing  code out of useEffect hook i.e console.log('renderrr'))
 // if searchText is passed in second parameter then it will call once after initial render + everytime after re render(whenever searchText value change)
@@ -26,10 +26,10 @@ useEffect(()=>{
 }, [restaurantData])
 
 const onTextChange =(e)=>{
-//   setUserList({
-// name:e.target.value,
-// email:'hello@test.com'
-//   }) 
+  setUserList({
+name:e.target.value,
+email:'hello@test.com'
+  }) 
 }
  
  if(!isOnline){
@@ -57,8 +57,8 @@ return <h1>Offline please check  your internet connection.</h1>
           Search 
         </button>
        
-        <input type='text' value={user.title} />
-        {user.email}
+        <input type='text' value={userList.name} onChange={(e)=> onTextChange(e)}/>
+         {userList.email}
       </div>
       
       <div className="restaurant-list">
