@@ -11,6 +11,9 @@ Ways to pass data from child to parent:
 3. Redux
 
 
-Lifting the state up- concept is needed when we need to control something  to its sibling component  from other sibling.In that case we need to create sytate in its parent and parent will handle it.
+Lifting the state up- concept is needed when we need to control something  to its sibling component  from other sibling.In that case we need to create state in its parent and parent will handle it.
 
-to change the context  we need context.provider
+To change the context  we need context.provider . It will update the value wherever we are using it, it will update at every component if we are using that context state value
+
+//THis we use when we have multiple context and want developer tool to track the names of my context.It helps in debugging
+UserContext.displayName="UserContext"

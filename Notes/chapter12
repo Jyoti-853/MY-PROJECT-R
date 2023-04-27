@@ -1,0 +1,42 @@
+Redux
+
+We can't create more than one store.
+
+In store we have different slices(like userStore, themestore.. to make all store mangeable and separate)
+
+We can't modify store directly( we will dispatch a action and it will call a function known as reducer
+ to make changes in store)
+
+ when we click on Add button it will  dispatch an action  it will call reducer function whicvh will change the slice of store.
+
+ to read the data from redux we need selector.(selecting a portion from store).
+ Selector is a hook.(useSelector).,Hook is function end of the day.
+
+ * dispatch an action---->call reducer--->update the state---
+  UI <---- selector<---store *
+
+  We use selector to subscribe the store means like to subscribe the themeStore in Store (to subscribe the slice)
+
+  Provider- to connect my react application to redux store we need Provider.
+
+  configureStore  --It is a function to create our own store
+
+  steps for  starting redux
+  1. create store by configureStore method.
+  2. Provide my store to app by using Provider and pass mystore in store props.
+  3. Create a slice by using createSlice function.
+  createSlice({
+    name:,
+    initialState:
+    reducers:{
+        addItem: (state, action)=>{}
+    }
+  })
+  4. Put that slice in store
+  configureStore({
+    reducer:{
+        cart: cartSlice ---------   cart is name from create SLice method and  cartSLice is my slice name
+    }
+  })
+5. subscribe to the store --using useSelector
+

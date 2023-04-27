@@ -12,6 +12,10 @@ import RestaurantMenu from "./components/RestaurantMenu";
 import Profile from './components/Profile';
 import Shimmer from './components/shimmer';
 import UserContext from "./utils/UserContext";
+//to connect my react application to redux store we need Provider.
+import { Provider } from "react-redux";
+import store from "./utils/store";
+import Cart from './components/Cart'
 
 //By using  simple Javascript render something in root element.
 // const heading= document.createElement('h1')
@@ -57,14 +61,15 @@ const AppLayout = () => {
   const [users, setUsers] =useState({name: 'Jenny', email: 'Demo@test.com'})
  
   return (
-    <>
+    //using Provider in our root component  means we are using my store throughout the application.
+    <Provider store={store}>
      {/* Provider will override user value of UserContext */}
     <UserContext.Provider value={{userList:users, setUserList:setUsers}}>
       <Header />
       <Outlet/>
       <Footer/>
       </UserContext.Provider>
-    </>
+    </Provider>
   );
 };
 
@@ -107,6 +112,11 @@ const  appRouter=createBrowserRouter(
         element: <Suspense fallback={<Shimmer/>}><Instamart/></Suspense>,
         errorElement:<Error/>
       },
+      {
+        path:'/cart',
+        element: <Cart/>,
+        errorElement: <Error/>
+      }
     ],
   }
 ])
